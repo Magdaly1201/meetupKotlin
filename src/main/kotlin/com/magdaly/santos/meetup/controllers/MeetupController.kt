@@ -1,6 +1,7 @@
 package com.magdaly.santos.meetup.controllers
 
 import com.magdaly.santos.meetup.models.Meetup
+import com.magdaly.santos.meetup.models.MeetupRequest
 import com.magdaly.santos.meetup.services.MeetupService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -18,7 +19,10 @@ class MeetupController(
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun save(@RequestParam meetup:String ) = service.save(meetup)
+    fun save(meetupRequest:MeetupRequest ) = service.save(Meetup(
+        reason = meetupRequest.reason,
+        description = meetupRequest.description
+    ))
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
