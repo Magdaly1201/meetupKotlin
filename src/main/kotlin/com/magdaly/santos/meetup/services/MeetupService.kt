@@ -11,7 +11,7 @@ import java.time.LocalDate
 class MeetupService (
     val repository: MeetupRepository
 ){
-    fun save(meetup:Meetup)= repository.save(Meetup(id=1, reason="HOLA",description = "Hola",status = MeetupStatus.ACTIVED,date = LocalDate.now()))
+    fun save(meetup:Meetup)= repository.save(meetup)
 
     fun getById(id:Long):Meetup = repository.findById(id).orElseThrow { MeetupNotFoundException() }
 
