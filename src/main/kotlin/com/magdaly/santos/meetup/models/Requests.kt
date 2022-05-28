@@ -1,11 +1,18 @@
 package com.magdaly.santos.meetup.models
 
-import java.time.LocalDate
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotEmpty
+import javax.validation.constraints.Size
 
 class MeetupRequest(
-    val reason: String = "",
-    val description: String = "",
+    @NotBlank
+    @NotEmpty
+    @Size(min = 0, max = 200)
+    val reason: String,
+
+    @NotBlank
+    @NotEmpty
+    @Size(min = 0, max = 300)
+    val description: String ,
+
 )
