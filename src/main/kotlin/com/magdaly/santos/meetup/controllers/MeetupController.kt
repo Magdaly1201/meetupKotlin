@@ -3,9 +3,11 @@ package com.magdaly.santos.meetup.controllers
 import com.magdaly.santos.meetup.models.Meetup
 import com.magdaly.santos.meetup.models.MeetupRequest
 import com.magdaly.santos.meetup.services.MeetupService
+import io.swagger.v3.oas.annotations.Operation
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 
 @RestController
@@ -19,7 +21,7 @@ class MeetupController(
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun save(meetupRequest:MeetupRequest ) = service.save(Meetup(
+    fun save(@Valid meetupRequest:MeetupRequest ) = service.save(Meetup(
         reason = meetupRequest.reason,
         description = meetupRequest.description
     ))
