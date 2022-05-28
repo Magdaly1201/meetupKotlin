@@ -25,11 +25,6 @@ internal class MeetupControllerTest (
     @MockBean
     private lateinit var serviceMock: MeetupService
 
-    private val meetup = Meetup(
-        reason = "Hello World",
-        description= "hello world description"
-    )
-
     private val meetupResponse = Meetup(
         id = 1,
         reason = "Hello World",
