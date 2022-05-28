@@ -24,6 +24,8 @@ dependencies {
 	implementation ("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("mysql:mysql-connector-java:8.0.24")
+	implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
+
 	// flyway
 	implementation ("org.flywaydb:flyway-core:5.2.4")
 	testImplementation("org.junit.vintage:junit-vintage-engine")
