@@ -12,8 +12,8 @@ import javax.persistence.Table
 @Table(name = "meetup")
 data class Meetup(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null,
-    val reason: String = "",
-    val description: String = "",
+    val reason: String? = null,
+    val description: String? = null,
     val status : MeetupStatus = MeetupStatus.ACTIVED,
     val date: LocalDate = LocalDate.now(),
 )
