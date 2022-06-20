@@ -26,11 +26,12 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("mysql:mysql-connector-java:8.0.24")
 	implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
+	implementation("org.springframework.kafka:spring-kafka")
 
 	// flyway
 	implementation ("org.flywaydb:flyway-core:5.2.4")
 	testImplementation("org.junit.vintage:junit-vintage-engine")
-
+	testImplementation("org.springframework.kafka:spring-kafka-test")
 	testImplementation(kotlin("test"))
 
 }
