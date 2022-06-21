@@ -17,11 +17,11 @@ class MeetupController(
 ) {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    fun getById(@PathVariable id:Long) : ResponseEntity<Meetup> = ResponseEntity( service.getById(id), HttpStatus.OK)
+    fun getById(@PathVariable id:Integer) : ResponseEntity<Meetup> = ResponseEntity( service.getById(id), HttpStatus.OK)
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun save(@Valid meetupRequest:MeetupRequest ) = service.save(Meetup(
+    fun save(@Valid @RequestBody meetupRequest:MeetupRequest ) = service.save(Meetup(
         reason = meetupRequest.reason,
         description = meetupRequest.description
     ))

@@ -1,11 +1,11 @@
 package com.magdaly.santos.meetup.repositories
 
-import com.magdaly.santos.meetup.models.Meetup
+import com.magdaly.santos.meetup.models.ParticipantMeetup
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
-
+import java.math.BigInteger
 
 @Repository
-interface MeetupRepository : CrudRepository<Meetup,Integer>{
+interface ParticipantRepository : CrudRepository<ParticipantMeetup, Integer>{
 
 }

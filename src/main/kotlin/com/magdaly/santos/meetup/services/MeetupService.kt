@@ -13,6 +13,6 @@ class MeetupService (
 ){
     fun save(meetup:Meetup)= repository.save(meetup)
 
-    fun getById(id:Long):Meetup = repository.findById(id).orElseThrow { MeetupNotFoundException() }
+    fun getById(id:Integer):Meetup = repository.findById(id).orElseThrow { MeetupNotFoundException() }
 
 }
