@@ -16,7 +16,7 @@ class MeetupController(
 ) {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    fun getById(@PathVariable id:Integer) : ResponseEntity<Meetup> = ResponseEntity( service.getById(id), HttpStatus.OK)
+    fun getById(@PathVariable id: Int) : ResponseEntity<Meetup> = ResponseEntity( service.getById(id), HttpStatus.OK)
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

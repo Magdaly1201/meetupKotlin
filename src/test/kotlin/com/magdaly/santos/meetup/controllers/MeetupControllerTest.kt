@@ -34,7 +34,7 @@ internal class MeetupControllerTest (
 
     @Test
     fun `get meetup by id and return meetup`() {
-       `when`(serviceMock.getById(any(Long::class.java))).thenReturn(meetupResponse)
+       `when`(serviceMock.getById(any(Int::class.java))).thenReturn(meetupResponse)
 
         mockMvc.perform(get("/api/v1/meetup/1"))
             .andExpect(status().isOk)

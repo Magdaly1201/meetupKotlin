@@ -18,6 +18,6 @@ class CateringController (
 
     @GetMapping("/meet/{id}/catering")
     @ResponseStatus(HttpStatus.OK)
-    fun getCateringByMeet(@PathVariable id: Integer): ResponseEntity<CateringMeetup> =
+    fun getCateringByMeet(@PathVariable id: Int): ResponseEntity<CateringMeetup> =
         ResponseEntity(service.getCateringByMeet(id), HttpStatus.OK)
 }

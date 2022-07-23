@@ -13,7 +13,7 @@ import javax.persistence.Table
 @Entity
 @Table(name = "meetup")
 data class Meetup(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Integer? = null,
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Int? = null,
     val reason: String? = null,
     val description: String? = null,
     val status : MeetupStatus = MeetupStatus.ACTIVED,
@@ -23,11 +23,11 @@ data class Meetup(
 @Entity
 @Table(name = "participant_meetup")
 class ParticipantMeetup (
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Integer? = null,
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Int? = null,
     @Column(nullable = false) var username: String? = null,
     @Column(nullable = false) var email: String? = null,
     @Column(nullable = false, name = "created_at") var createdAt: LocalDate? = null,
-    @Column(nullable = false, name = "meet_id") var meetId: Integer? = null,
+    @Column(nullable = false, name = "meet_id") var meetId: Int? = null,
 
-)
+    )
 

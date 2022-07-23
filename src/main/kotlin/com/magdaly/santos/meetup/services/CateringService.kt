@@ -10,7 +10,7 @@ class CateringService(
     val temperatureService: TemperatureService
 ) {
 
-    fun getCateringByMeet(id: Integer): CateringMeetup {
+    fun getCateringByMeet(id: Int): CateringMeetup {
         val meetup = meetupService.getById(id)
         val participantsByMeet = meetup.id?.let { participantService.getByMeetId(it).size }
         return CateringMeetup(

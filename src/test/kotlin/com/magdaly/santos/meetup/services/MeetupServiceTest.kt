@@ -43,7 +43,7 @@ internal class MeetupServiceTest(
 */
     @Test
     fun `get meetup by id and return meetup`(){
-       `when`(mockRepository.findById(any(Long::class.java))).thenReturn(Optional.of(meetup))
+       `when`(mockRepository.findById(any(Int::class.java))).thenReturn(Optional.of(meetup))
 
         val result = service.getById(1)
         assertEquals(1, result.id)
@@ -54,6 +54,6 @@ internal class MeetupServiceTest(
         `when`(mockRepository.save(any(Meetup::class.java))).thenReturn(meetup)
 
         val result = service.save(meetup)
-        assertEquals(1L, result.id)
+        assertEquals(1, result.id)
     }
 }
