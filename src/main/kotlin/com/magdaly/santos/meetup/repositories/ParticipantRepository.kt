@@ -8,4 +8,6 @@ import java.math.BigInteger
 @Repository
 interface ParticipantRepository : CrudRepository<ParticipantMeetup, Integer>{
 
+     fun findAllByMeetId(meetId: Integer) : List<ParticipantMeetup>
+
 }

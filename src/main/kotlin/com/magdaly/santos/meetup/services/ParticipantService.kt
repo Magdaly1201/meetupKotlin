@@ -12,4 +12,6 @@ class ParticipantService(
 
     fun save(participantMeetup: ParticipantMeetup)= repository.save(participantMeetup)
 
+    fun getByMeetId(meetId: Integer) = repository.findAllByMeetId(meetId)
+
 }

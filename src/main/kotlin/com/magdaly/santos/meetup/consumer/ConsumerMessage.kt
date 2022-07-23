@@ -11,7 +11,6 @@ import java.io.IOException
 
 
 @Service
-
 class ConsumerMessage (
     val participantService: ParticipantService,
     val objectMapper: ObjectMapper
