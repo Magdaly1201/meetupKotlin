@@ -27,6 +27,7 @@ dependencies {
 	implementation("mysql:mysql-connector-java:8.0.24")
 	implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
 	implementation("org.springframework.kafka:spring-kafka")
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
 	// flyway
 	implementation ("org.flywaydb:flyway-core:5.2.4")
@@ -34,6 +35,12 @@ dependencies {
 	testImplementation("org.springframework.kafka:spring-kafka-test")
 	testImplementation(kotlin("test"))
 
+}
+
+dependencyManagement {
+	imports {
+		mavenBom ("org.springframework.cloud:spring-cloud-dependencies:2021.0.5")
+	}
 }
 
 tasks.withType<KotlinCompile> {
