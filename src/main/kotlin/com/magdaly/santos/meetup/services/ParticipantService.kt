@@ -10,7 +10,7 @@ class ParticipantService(
     val repository: ParticipantRepository
 ) {
 
-    fun save(participantMeetup: ParticipantMeetup)= repository.save(participantMeetup)
+    fun save(participantMeetup: ParticipantMeetup) = repository.save(participantMeetup)
 
     fun getByMeetId(meetId: Int) = repository.findAllByMeetId(meetId)
 

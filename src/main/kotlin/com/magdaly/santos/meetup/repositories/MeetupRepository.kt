@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository
 
 
 @Repository
-interface MeetupRepository : CrudRepository<Meetup, Int>{
+interface MeetupRepository : CrudRepository<Meetup, Int> {
 
 }

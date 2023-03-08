@@ -1,6 +1,5 @@
 package com.magdaly.santos.meetup.exceptions
 
-import org.hibernate.bytecode.BytecodeLogging.LOGGER
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.FieldError
@@ -8,16 +7,12 @@ import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.web.context.request.WebRequest
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler
-import java.net.http.HttpHeaders
 import java.util.stream.Collectors
 
 
 @ControllerAdvice
 class ControllerAdviceExceptions : ResponseEntityExceptionHandler() {
-
-    val MEETUP_NOT_FOUND = "meetup not found"
 
     @ExceptionHandler(MeetupNotFoundException::class)
     @ResponseBody
@@ -32,7 +27,7 @@ class ControllerAdviceExceptions : ResponseEntityExceptionHandler() {
 
     @Override
     @ResponseBody
-    protected fun handleMethodArgumentNotValid(ex: MethodArgumentNotValidException):ResponseEntity<Map<String, Any>>? {
+    fun handleMethodArgumentNotValid(ex: MethodArgumentNotValidException): ResponseEntity<Map<String, Any>>? {
         val response: MutableMap<String, Any> = HashMap()
         if (ex.bindingResult.hasErrors()) {
             val errors = ex.bindingResult.fieldErrors.stream()

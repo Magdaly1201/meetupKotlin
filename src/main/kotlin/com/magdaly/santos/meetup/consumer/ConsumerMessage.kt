@@ -11,10 +11,10 @@ import java.io.IOException
 
 
 @Service
-class ConsumerMessage (
+class ConsumerMessage(
     val participantService: ParticipantService,
     val objectMapper: ObjectMapper
-    ){
+) {
     private val logger: Logger = LoggerFactory.getLogger(ConsumerMessage::class.java)
 
     @KafkaListener(topics = ["meetups-events"])

@@ -1,6 +1,5 @@
 package com.magdaly.santos.meetup.models
 
-import java.math.BigInteger
 import java.time.LocalDate
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -16,13 +15,13 @@ data class Meetup(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Int? = null,
     val reason: String? = null,
     val description: String? = null,
-    val status : MeetupStatus = MeetupStatus.ACTIVED,
+    val status: MeetupStatus = MeetupStatus.ACTIVED,
     val date: LocalDate = LocalDate.now(),
 )
 
 @Entity
 @Table(name = "participant_meetup")
-class ParticipantMeetup (
+class ParticipantMeetup(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Int? = null,
     @Column(nullable = false) var username: String? = null,
     @Column(nullable = false) var email: String? = null,

@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/v1")
-class CateringController (
-    val service : CateringService
-    ) {
+class CateringController(
+    val service: CateringService
+) {
 
     @GetMapping("/meet/{id}/catering")
     @ResponseStatus(HttpStatus.OK)

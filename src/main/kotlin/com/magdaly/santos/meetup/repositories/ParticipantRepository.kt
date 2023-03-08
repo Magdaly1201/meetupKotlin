@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository
 import java.math.BigInteger
 
 @Repository
-interface ParticipantRepository : CrudRepository<ParticipantMeetup, Int>{
+interface ParticipantRepository : CrudRepository<ParticipantMeetup, Int> {
 
-     fun findAllByMeetId(meetId: Int) : List<ParticipantMeetup>
+    fun findAllByMeetId(meetId: Int): List<ParticipantMeetup>
 
 }
