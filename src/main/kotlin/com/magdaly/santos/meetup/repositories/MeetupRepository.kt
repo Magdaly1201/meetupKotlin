@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface MeetupRepository : CrudRepository<Meetup, Int> {
 
+    override fun findAll(): List<Meetup>
+
 }
